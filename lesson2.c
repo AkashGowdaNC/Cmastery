@@ -75,36 +75,3 @@ int main()
             printf("%d ", i);
         }
     }
-
-    return 0;
-}
-int main()
-{
-    int n;
-    scanf("%d", &n);
-
-    for (int i = 2; i <= n; i++)
-    {
-        if (isPrime(i))
-        {
-            printf("%d ", i);
-        }
-    }
-
-    return 0;
-}
-int main()
-{
-    int n;
-    scanf("%d", &n);
-
-    for (int i = 2; i <= n; i++)
-    {
-        if (isPrime(i))
-        {
-            printf("%d ", i);
-        }
-    }
-
-    return 0;
-}
