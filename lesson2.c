@@ -100,3 +100,11 @@ int main()
             printf("%d ", i);
         }
     }
+
+for (int i = 2; i <= n; i++)
+    {
+        if (isPrime(i))
+        {
+            printf("%d ", i);
+        }
+    }
