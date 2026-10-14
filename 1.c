@@ -22,3 +22,10 @@ printf("%d\n", a / b);
 printf("%d\n", a % b);
 return 0;
 }
+rintf("%d\n", a + b);
+printf("%d\n", a - b);
+printf("%d\n", a * b);
+printf("%d\n", a / b);
+printf("%d\n", a % b);
+return 0;
+}
