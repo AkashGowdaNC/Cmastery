@@ -60,6 +60,7 @@ int main(void) {
 //Deletion: removing an element
 #include <stdio.h>
 
+
 int main(void) {
     int a[10] = {10, 20, 30, 40, 50};
     int n = 5;
@@ -87,36 +88,46 @@ int main(void) {
 #include <stdio.h>
 #include <stdbool.h>
 
+
+
+
 int main(void) {
-    int a[] = {10, 5, 20, 20, 8};
-    int n = 5;
+    int a[100];
+    int n;
 
-    int largest = 0;
-    int second = 0;
-    bool hasLargest = false;
-    bool hasSecond = false;
+    printf("Enter number of elements (1-100): ");
+    if (scanf("%d", &n) != 1 || n < 1 || n > 100) {
+        printf("Invalid size.\n");
+        return 1;
+    }
 
+    printf("Enter %d integers:\n", n);
     for (int i = 0; i < n; i++) {
-        int x = a[i];
-
-        if (!hasLargest || x > largest) {
-            if (hasLargest) {
-                second = largest;
-                hasSecond = true;
-            }
-
-            largest = x;
-            hasLargest = true;
-        } else if (x < largest && (!hasSecond || x > second)) {
-            second = x;
-            hasSecond = true;
+        if (scanf("%d", &a[i]) != 1) {
+            printf("Invalid input.\n");
+            return 1;
         }
     }
 
-    if (hasSecond) {
-        printf("Second-largest distinct: %d\n", second);
+    int largest = a[0];
+    int second_largest = -2147483648; // Minimum value for int
+    bool found_second = false;
+
+    for (int i = 1; i < n; i++) {
+        if (a[i] > largest) {
+            second_largest = largest;
+            largest = a[i];
+            found_second = true;
+        } else if (a[i] < largest && a[i] > second_largest) {
+            second_largest = a[i];
+            found_second = true;
+        }
+    }
+
+    if (found_second) {
+        printf("Second-largest distinct element: %d\n", second_largest);
     } else {
-        printf("No second-largest distinct element.\n");
+        printf("No second-largest distinct element found.\n");
     }
 
     return 0;
