@@ -161,30 +161,3 @@ int main(void) {
     printf("\n");
     return 0;
 }
-//Deletion: removing an element
-#include <stdio.h>
-
-
-int main(void) {
-    int a[10] = {10, 20, 30, 40, 50};
-    int n = 5;
-    int position = 2;
-
-    if (position < 0 || position >= n) {
-        printf("Invalid position.\n");
-        return 1;
-    }
-
-    for (int i = position; i < n - 1; i++) {
-        a[i] = a[i + 1];
-    }
-
-    n--;
-
-    for (int i = 0; i < n; i++) {
-        printf("%d ", a[i]);
-    }
-
-    printf("\n");
-    return 0;
-}
