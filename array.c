@@ -132,32 +132,3 @@ int main(void) {
 
     return 0;
 }
-//Complete insertion program
-#include <stdio.h>
-
-int main(void) {
-    int a[10] = {10, 20, 30, 40, 50};
-    int n = 5;
-    int capacity = 10;
-    int position = 2;
-    int value = 99;
-
-    if (n >= capacity || position < 0 || position > n) {
-        printf("Insertion not possible.\n");
-        return 1;
-    }
-
-    for (int i = n; i > position; i--) {
-        a[i] = a[i - 1];
-    }
-
-    a[position] = value;
-    n++;
-
-    for (int i = 0; i < n; i++) {
-        printf("%d ", a[i]);
-    }
-
-    printf("\n");
-    return 0;
-}
