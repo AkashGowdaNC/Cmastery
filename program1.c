@@ -11,4 +11,3 @@ int main()
     printf("sum of n numbers is %d",sum);
     return 0;
 }
-#include<stdio.h>
